@@ -254,14 +254,18 @@ void MainWindow::on_actionOpen_triggered()
                 QString newFile = mFilename;
                 newFile.replace("Inds","Corrected");
                 QFile sFile1(newFile);
-                if(sFile1.open(QFile::ReadOnly | QFile::Text))
+				std::wfstream ifile(mFilename.toStdString());
+				
+				if(sFile1.open(QFile::ReadOnly | QFile::Text))
                 {
                     QTextStream in(&sFile1);
+					in.setCodec("UTF-8");
                     QString text = in.readAll();
                     sFile.close();
                     ui->textBrowser->setPlainText(text);
                 } else {
                     QTextStream in(&sFile);
+					in.setCodec("UTF-8");
                     QString text = in.readAll();
                     sFile.close();
                     ui->textBrowser->setPlainText(text);
