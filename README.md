@@ -1,3 +1,6 @@
+# Feature Added
+A simple markdown editor opened in a dialog box(Edit > Format)
+
 # Ubuntu and Qt version
 
 Compiled and Tested on Ubuntu Ubuntu 18.04. with Qt 5
@@ -19,7 +22,6 @@ Compiled and Tested on Ubuntu Ubuntu 18.04. with Qt 5
 - $ qmake qpadfinal.pro
 - $ make
 - Ignore the warnings. Will be removed in the next version.
-
 
 
 Execute file qpadfinal in folder "FrameWorkCode"
