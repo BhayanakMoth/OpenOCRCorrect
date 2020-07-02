@@ -26,7 +26,7 @@ SOURCES +=\
     zoom.cpp \
     qcustomplot.cpp \
 	Document.cpp \
-	markdownenditor.cpp \
+	markdowneditor.cpp \
 	previewpage.cpp
 
 HEADERS  += mainwindow.h \
@@ -36,11 +36,11 @@ HEADERS  += mainwindow.h \
     zoom.h \
     qcustomplot.h \
     meanStdPage.h \
-	markdownenditor.h \
+	markdowneditor.h \
 	Previewpage.h \
 	Document.h
 
-FORMS    += mainwindow.ui markdownenditor.ui
+FORMS    += mainwindow.ui markdowneditor.ui
 
 RESOURCES += \
     AppResources.qrc
