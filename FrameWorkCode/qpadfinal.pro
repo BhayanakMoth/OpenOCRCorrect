@@ -40,7 +40,7 @@ HEADERS  += mainwindow.h \
 	Previewpage.h \
 	Document.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui markdownenditor.ui
 
 RESOURCES += \
     AppResources.qrc
