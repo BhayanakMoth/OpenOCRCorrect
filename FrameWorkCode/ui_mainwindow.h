@@ -68,6 +68,7 @@ public:
     QAction *actionSanskrit;
     QAction *actionHindi;
     QAction *actionEnglish;
+    QAction *actionBold;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
     QProgressBar *progressBar;
@@ -83,6 +84,7 @@ public:
     QMenu *menuConvertFiles;
     QMenu *menuFeatureExtraction;
     QMenu *menuSelectLanguage;
+    QMenu *menuEdit;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -178,6 +180,8 @@ public:
         actionHindi->setObjectName(QString::fromUtf8("actionHindi"));
         actionEnglish = new QAction(MainWindow);
         actionEnglish->setObjectName(QString::fromUtf8("actionEnglish"));
+        actionBold = new QAction(MainWindow);
+        actionBold->setObjectName(QString::fromUtf8("actionBold"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -261,6 +265,8 @@ public:
         menuFeatureExtraction->setObjectName(QString::fromUtf8("menuFeatureExtraction"));
         menuSelectLanguage = new QMenu(menuBar);
         menuSelectLanguage->setObjectName(QString::fromUtf8("menuSelectLanguage"));
+        menuEdit = new QMenu(menuBar);
+        menuEdit->setObjectName(QString::fromUtf8("menuEdit"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -276,6 +282,7 @@ public:
         menuBar->addAction(menuSaveVariables->menuAction());
         menuBar->addAction(menuConvertFiles->menuAction());
         menuBar->addAction(menuFeatureExtraction->menuAction());
+        menuBar->addAction(menuEdit->menuAction());
         menuOCR_Correction_Window->addAction(actionNew);
         menuOCR_Correction_Window->addAction(actionOpen);
         menuOCR_Correction_Window->addAction(actionSave);
@@ -314,6 +321,7 @@ public:
         menuSelectLanguage->addAction(actionSanskrit);
         menuSelectLanguage->addAction(actionHindi);
         menuSelectLanguage->addAction(actionEnglish);
+        menuEdit->addAction(actionBold);
         mainToolBar->addAction(actionNew);
         mainToolBar->addAction(actionOpen);
         mainToolBar->addAction(actionSave);
@@ -424,6 +432,7 @@ public:
 #if QT_CONFIG(tooltip)
         actionEnglish->setToolTip(QCoreApplication::translate("MainWindow", "English", nullptr));
 #endif // QT_CONFIG(tooltip)
+        actionBold->setText(QCoreApplication::translate("MainWindow", "Bold", nullptr));
         textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -435,6 +444,7 @@ public:
         menuConvertFiles->setTitle(QCoreApplication::translate("MainWindow", "ConvertFiles", nullptr));
         menuFeatureExtraction->setTitle(QCoreApplication::translate("MainWindow", "FeatureExtraction", nullptr));
         menuSelectLanguage->setTitle(QCoreApplication::translate("MainWindow", "SelectLanguage", nullptr));
+        menuEdit->setTitle(QCoreApplication::translate("MainWindow", "Edit", nullptr));
     } // retranslateUi
 
 };

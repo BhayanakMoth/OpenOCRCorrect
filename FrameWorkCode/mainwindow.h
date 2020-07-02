@@ -79,7 +79,7 @@ private slots:
 
     //bool eventFilter(QObject *object, QEvent *event);
 
-
+	void on_actionBold_triggered();
     void on_actionLoad_Next_Page_triggered();
 
     void on_actionLoad_Prev_Page_triggered();

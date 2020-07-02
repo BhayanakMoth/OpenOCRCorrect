@@ -209,12 +209,19 @@ p, li { white-space: pre-wrap; }
     <addaction name="actionHindi"/>
     <addaction name="actionEnglish"/>
    </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionBold"/>
+   </widget>
    <addaction name="menuSelectLanguage"/>
    <addaction name="menuOCR_Correction_Window"/>
    <addaction name="menuCreateReports"/>
    <addaction name="menuSaveVariables"/>
    <addaction name="menuConvertFiles"/>
    <addaction name="menuFeatureExtraction"/>
+   <addaction name="menuEdit"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -488,6 +495,11 @@ p, li { white-space: pre-wrap; }
    </property>
    <property name="toolTip">
     <string>English</string>
+   </property>
+  </action>
+  <action name="actionBold">
+   <property name="text">
+    <string>Bold</string>
    </property>
   </action>
  </widget>
