@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui webenginewidgets webchannel
 QT += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -24,7 +24,10 @@ SOURCES +=\
         mainwindow.cpp \
     main.cpp \
     zoom.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+	Document.cpp \
+	markdownenditor.cpp \
+	previewpage.cpp
 
 HEADERS  += mainwindow.h \
     eddis.h \
@@ -32,7 +35,10 @@ HEADERS  += mainwindow.h \
     trieEditdis.h \
     zoom.h \
     qcustomplot.h \
-    meanStdPage.h
+    meanStdPage.h \
+	markdownenditor.h \
+	Previewpage.h \
+	Document.h
 
 FORMS    += mainwindow.ui
 
