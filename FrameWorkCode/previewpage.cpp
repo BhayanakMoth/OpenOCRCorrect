@@ -1,4 +1,4 @@
-#include "previewpage.h"
+#include "Previewpage.h"
 #include <QDesktopServices>
 
 bool PreviewPage::acceptNavigationRequest(const QUrl & url, QWebEnginePage::NavigationType  type, bool isMainFrame) {
