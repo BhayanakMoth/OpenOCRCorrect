@@ -35,6 +35,7 @@ Compiled and Tested on Ubuntu Ubuntu 16.04. with Qt 5
 
 2. Install qt5:
 - $ sudo apt-get install qt5-default
+- $ sudo apt-get install qtwebengine5-dev
 
 3. Go to folder "FrameWorkCode", compile qpadfinal.pro and make:
 - $ cd FrameWorkCode
