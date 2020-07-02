@@ -69,6 +69,7 @@ public:
     QAction *actionHindi;
     QAction *actionEnglish;
     QAction *actionBold;
+    QAction *actionFormat;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
     QProgressBar *progressBar;
@@ -182,6 +183,8 @@ public:
         actionEnglish->setObjectName(QString::fromUtf8("actionEnglish"));
         actionBold = new QAction(MainWindow);
         actionBold->setObjectName(QString::fromUtf8("actionBold"));
+        actionFormat = new QAction(MainWindow);
+        actionFormat->setObjectName(QString::fromUtf8("actionFormat"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
@@ -321,7 +324,7 @@ public:
         menuSelectLanguage->addAction(actionSanskrit);
         menuSelectLanguage->addAction(actionHindi);
         menuSelectLanguage->addAction(actionEnglish);
-        menuEdit->addAction(actionBold);
+        menuEdit->addAction(actionFormat);
         mainToolBar->addAction(actionNew);
         mainToolBar->addAction(actionOpen);
         mainToolBar->addAction(actionSave);
@@ -432,7 +435,8 @@ public:
 #if QT_CONFIG(tooltip)
         actionEnglish->setToolTip(QCoreApplication::translate("MainWindow", "English", nullptr));
 #endif // QT_CONFIG(tooltip)
-        actionBold->setText(QCoreApplication::translate("MainWindow", "Bold", nullptr));
+        actionBold->setText(QCoreApplication::translate("MainWindow", "Format", nullptr));
+        actionFormat->setText(QCoreApplication::translate("MainWindow", "Format", nullptr));
         textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

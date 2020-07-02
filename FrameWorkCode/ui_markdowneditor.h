@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWebEngineWidgets/QWebEngineView>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QPlainTextEdit>
@@ -24,19 +25,22 @@ QT_BEGIN_NAMESPACE
 class Ui_markdowneditor
 {
 public:
+    QAction *actionBold;
     QVBoxLayout *verticalLayout_2;
     QVBoxLayout *verticalLayout;
     QWidget *widget;
-    QPushButton *pushButton;
+    QPushButton *Bold;
     QSplitter *splitter;
-    QPlainTextEdit *plainTextEdit;
-    QWebEngineView *webEngineView;
+    QPlainTextEdit *editor;
+    QWebEngineView *preview;
 
     void setupUi(QDialog *markdowneditor)
     {
         if (markdowneditor->objectName().isEmpty())
             markdowneditor->setObjectName(QString::fromUtf8("markdowneditor"));
         markdowneditor->resize(663, 503);
+        actionBold = new QAction(markdowneditor);
+        actionBold->setObjectName(QString::fromUtf8("actionBold"));
         verticalLayout_2 = new QVBoxLayout(markdowneditor);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -52,22 +56,26 @@ public:
         sizePolicy.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
         widget->setSizePolicy(sizePolicy);
         widget->setMaximumSize(QSize(872, 43));
-        pushButton = new QPushButton(widget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(0, 0, 75, 41));
+        Bold = new QPushButton(widget);
+        Bold->setObjectName(QString::fromUtf8("Bold"));
+        Bold->setGeometry(QRect(0, 0, 75, 41));
 
         verticalLayout->addWidget(widget);
 
         splitter = new QSplitter(markdowneditor);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setOrientation(Qt::Horizontal);
-        plainTextEdit = new QPlainTextEdit(splitter);
-        plainTextEdit->setObjectName(QString::fromUtf8("plainTextEdit"));
-        splitter->addWidget(plainTextEdit);
-        webEngineView = new QWebEngineView(splitter);
-        webEngineView->setObjectName(QString::fromUtf8("webEngineView"));
-        webEngineView->setUrl(QUrl(QString::fromUtf8("about:blank")));
-        splitter->addWidget(webEngineView);
+        editor = new QPlainTextEdit(splitter);
+        editor->setObjectName(QString::fromUtf8("editor"));
+        QFont font;
+        font.setFamily(QString::fromUtf8("Shobhika Regular"));
+        font.setPointSize(14);
+        editor->setFont(font);
+        splitter->addWidget(editor);
+        preview = new QWebEngineView(splitter);
+        preview->setObjectName(QString::fromUtf8("preview"));
+        preview->setUrl(QUrl(QString::fromUtf8("about:blank")));
+        splitter->addWidget(preview);
 
         verticalLayout->addWidget(splitter);
 
@@ -83,7 +91,8 @@ public:
     void retranslateUi(QDialog *markdowneditor)
     {
         markdowneditor->setWindowTitle(QCoreApplication::translate("markdowneditor", "markdowneditor", nullptr));
-        pushButton->setText(QCoreApplication::translate("markdowneditor", "Bold", nullptr));
+        actionBold->setText(QCoreApplication::translate("markdowneditor", "Bold", nullptr));
+        Bold->setText(QCoreApplication::translate("markdowneditor", "Bold", nullptr));
     } // retranslateUi
 
 };

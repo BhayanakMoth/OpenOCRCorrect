@@ -30,7 +30,7 @@
          <height>43</height>
         </size>
        </property>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="Bold">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -50,8 +50,15 @@
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <widget class="QPlainTextEdit" name="plainTextEdit"/>
-       <widget class="QWebEngineView" name="webEngineView">
+       <widget class="QPlainTextEdit" name="editor">
+        <property name="font">
+         <font>
+          <family>Shobhika Regular</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+       </widget>
+       <widget class="QWebEngineView" name="preview">
         <property name="url">
          <url>
           <string>about:blank</string>
@@ -63,6 +70,11 @@
     </layout>
    </item>
   </layout>
+  <action name="actionBold">
+   <property name="text">
+    <string>Bold</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

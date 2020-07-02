@@ -4,6 +4,7 @@
 #include "slpNPatternDict.h" //as included through lcsqt.h
 #include "trieEditdis.h"
 #include "meanStdPage.h"
+#include "markdowneditor.h"
 #include <math.h>
 
 
@@ -258,7 +259,7 @@ void MainWindow::on_actionOpen_triggered()
 				
 				if(sFile1.open(QFile::ReadOnly | QFile::Text))
                 {
-                    QTextStream in(&sFile1);
+                    QTextStream in(&sFile);
 					in.setCodec("UTF-8");
                     QString text = in.readAll();
                     sFile.close();
@@ -642,22 +643,11 @@ void MainWindow::textChangedSlot(){
         }
 }
 */
-void processfragment(QTextBrowser * te) {
-	auto cursor = te->textCursor();
-	auto selection = cursor.selection();
-	QTextDocumentFragment fragd;
-	auto str = selection.toPlainText();
-	auto html = "<b>" + str + "</b>";
-	auto newfrag = selection.fromHtml(html);
-	cursor.insertFragment(newfrag);
 
-}
-void MainWindow::on_actionBold_triggered() {
-	auto cursor = ui->textBrowser->textCursor();
-
-	if (cursor.hasSelection()) {
-		processfragment(ui->textBrowser);
-	}
+void MainWindow::on_actionFormat_triggered() {
+	markdowneditor mde(ui->textBrowser->toPlainText(),this);
+	mde.setModal(true);
+	mde.exec();
 }
 void MainWindow::menuSelection(QAction* action)
 {
